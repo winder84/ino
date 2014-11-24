@@ -1,0 +1,45 @@
+<div class="inoHeaderBg">
+	<div class="inoHeader">
+		<div class="headerLogoBgDiv">
+			<div class="headerLogoBg">
+				<a class="headerLogo" href="/"></a>
+			</div>
+		</div>
+		<div class="socAndMenu">
+			<div class="socIcons">
+				<a class="fBIcon" href="#">facebook</a>
+				<a class="vKIcon" href="#">vkontakte</a>
+				<a class="oDIcon" href="#">odesk</a>
+			</div>
+			<div class="menuDiv">
+				<ul class="menuUl">
+					<li {% if path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) == '/' %}
+							class="current"
+						{% endif %}>
+						<a href="#">Главная</a>
+					</li>
+					<li {% if path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) == '/' %}
+							class="current"
+						{% endif %}>
+						<a href="#">Портфолио</a>
+					</li>
+					<li {% if path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) == '/' %}
+							class="current"
+						{% endif %}>
+						<a href="#">Процесс</a>
+					</li>
+					<li {% if path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) == '/' %}
+							class="current"
+						{% endif %}>
+						<a href="#">Наши проекты</a>
+					</li>
+					<li {% if path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) == '/' %}
+							class="current"
+						{% endif %}>
+						<a href="#">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

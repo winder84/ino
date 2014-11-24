@@ -1,0 +1,3 @@
+wdr_inoweb_homepage:
+    path:     /
+    defaults: { _controller: WdrInowebBundle:Default:index }

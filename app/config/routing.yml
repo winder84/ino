@@ -1,0 +1,4 @@
+wdr_inoweb:
+    resource: "@WdrInowebBundle/Resources/config/routing.yml"
+    prefix:   /
+

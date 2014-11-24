@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+			{% stylesheets 'bundles/wdrinoweb/css/*' filter='cssrewrite' %}
+				<link rel="stylesheet" href="{{ asset_url }}" />
+			{% endstylesheets %}
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		{% block javascripts %}
+			{% javascripts '@WdrInowebBundle/Resources/public/js/*' %}
+				<script type="text/javascript" src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+		{% endblock %}
+    </head>
+    <body>
+		{{ include("WdrInowebBundle:Default:header.html.twig") }}
+        {% block body %}{% endblock %}
+		{{ include("WdrInowebBundle:Default:footer.html.twig") }}
+    </body>
+</html>

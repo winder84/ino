@@ -1,0 +1,4 @@
+services:
+#    wdr_inoweb.example:
+#        class: Wdr\InowebBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

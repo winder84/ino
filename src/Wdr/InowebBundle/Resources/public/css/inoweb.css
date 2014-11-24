@@ -1,0 +1,117 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.inoHeaderBg {
+	width: 100%;
+	height: 136px;
+	background: url("../images/headerBg.png") repeat-x;
+}
+
+.inoHeader {
+	width: 1248px;
+	height: 136px;
+	margin: 0 auto;
+}
+
+.inoHeader div {
+	vertical-align: top;
+}
+
+.headerLogoBgDiv {
+	display: inline-block;
+}
+
+.socAndMenu {
+	display: inline-block;
+}
+
+.headerLogoBg {
+	width: 388px;
+	height: 136px;
+	background: url("../images/headerLogoBg1.png") no-repeat;
+}
+
+.headerLogo {
+	display: block;
+	width: 126px;
+	height: 136px;
+	background: url("../images/headerLogo.png") no-repeat;
+	margin: 0 0 0 140px;
+}
+
+.socIcons {
+	width: 700px;
+	height: 30px;
+	vertical-align: top;
+	text-align: right;
+	margin: 0 150px 0 0;
+	padding: 30px 0 0 0;
+	font-size: 0px;
+}
+
+.socIcons a {
+	width: 29px;
+	height: 29px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.fBIcon {
+	background: url("../images/fB.png");
+}
+
+.vKIcon {
+	background: url("../images/vK.png");
+}
+
+.oDIcon {
+	background: url("../images/oD.png");
+}
+
+.fBIcon:hover {
+	background: url("../images/fBa.png");
+}
+
+.vKIcon:hover {
+	background: url("../images/vKa.png");
+}
+
+.oDIcon:hover {
+	background: url("../images/oDa.png");
+}
+
+.menuUl {
+	list-style: none;
+	text-align: right;
+	margin: 25px 132px 0 0;
+	height: 40px;
+	padding: 0;
+}
+
+.menuUl li {
+	display: inline-block;
+	margin-right: 30px;
+	padding: 9px 14px;
+	height: 18px;
+}
+
+.menuUl li:hover {
+	border-radius: 5px;
+	border: 2px solid #48484a;
+	padding: 7px 12px;
+}
+
+.current {
+	border-radius: 5px;
+	background: #48484a;
+	padding: 7px 12px;
+}
+
+.menuUl li a {
+	text-decoration: none;
+	color: #bdbdbd;
+	font-family: Tahoma , Arial, sans-serif;
+	font-size: 16px;
+}

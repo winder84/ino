@@ -1,0 +1,3 @@
+wdr_admin_homepage:
+    path:     /
+    defaults: { _controller: WdrAdminBundle:Default:index }

@@ -1,3 +1,7 @@
+wdr_admin:
+    resource: "@WdrAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
 wdr_inoweb:
     resource: "@WdrInowebBundle/Resources/config/routing.yml"
     prefix:   /

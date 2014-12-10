@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}inoWeb{% endblock %}</title>
         {% block stylesheets %}
 			{% stylesheets 'bundles/wdrinoweb/css/*' filter='cssrewrite' %}
 				<link rel="stylesheet" href="{{ asset_url }}" />
@@ -17,7 +17,9 @@
     </head>
     <body>
 		{{ include("WdrInowebBundle:Default:header.html.twig") }}
-        {% block body %}{% endblock %}
+		<div class="content">
+			{% block body %}{% endblock %}
+		</div>
 		{{ include("WdrInowebBundle:Default:footer.html.twig") }}
     </body>
 </html>

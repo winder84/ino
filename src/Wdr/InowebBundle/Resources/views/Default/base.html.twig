@@ -17,8 +17,27 @@
     </head>
     <body>
 		{{ include("WdrInowebBundle:Default:header.html.twig") }}
+		{#{% block sonata_page_breadcrumb %}#}
+			{#<div class="row">#}
+				{#{% if sonata_seo_context is not defined %}#}
+					{#{% set sonata_seo_context = 'homepage' %}#}
+				{#{% endif %}#}
+				{#{{ sonata_block_render_event('breadcrumb', { 'context': sonata_seo_context, 'current_uri': app.request.requestUri }) }}#}
+			{#</div>#}
+		{#{% endblock %}#}
 		<div class="content">
-			{% block body %}{% endblock %}
+			{% block page_content %}
+				{% if content is defined %}
+					{{ content|raw }}
+				{% else %}
+					{% set content = block('content') %}
+					{% if content|length > 0 %}
+						{{ content|raw }}
+					{% elseif page is defined %}
+						{{ sonata_page_render_container('content', page) }}
+					{% endif %}
+				{% endif %}
+			{% endblock %}
 		</div>
 		{{ include("WdrInowebBundle:Default:footer.html.twig") }}
     </body>

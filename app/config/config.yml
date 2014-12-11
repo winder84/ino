@@ -202,7 +202,7 @@ sonata_page:
 
     default_template: default # template key from templates section, used as default for pages
     templates:
-        default:  { path: 'SonataPageBundle::layout.html.twig',          name: 'default' }
+        default:  { path: 'WdrInowebBundle:Default:base.html.twig',          name: 'default' }
         2columns: { path: 'SonataPageBundle::2columns_layout.html.twig', name: '2 columns layout' }
 
     # manage the http errors
@@ -246,12 +246,12 @@ sonata_admin:
         stylesheets:
             # Defaults:
             - bundles/sonataadmin/vendor/bootstrap/dist/css/bootstrap.min.css
-#            - bundles/sonataadmin/vendor/components-font-awesome/css/font-awesome.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/font-awesome.min.css
 #            - bundles/sonataadmin/vendor/ionicons/css/ionicons.min.css
             - bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE.css
 #            - bundles/sonataadmin/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
             - bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css
-            - bundles/sonataadmin/vendor/select2/select2.css
+            - bundles/sonatacore/select2/select2.css
             - bundles/sonataadmin/vendor/select2/select2-bootstrap.css
             - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
             - bundles/sonataadmin/css/styles.css
@@ -261,16 +261,16 @@ sonata_admin:
         javascripts:
             # Defaults:
             - bundles/sonataadmin/vendor/jquery/dist/jquery.min.js
-            - bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js
-#            - bundles/sonataadmin/vendor/moment/min/moment.min.js
             - bundles/sonataadmin/vendor/bootstrap/dist/js/bootstrap.min.js
-#            - bundles/sonataadmin/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
+            - bundles/sonatacore/vendor/moment/min/moment.min.js
+            - bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
+            - bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js
             - bundles/sonataadmin/vendor/jqueryui/ui/minified/jquery-ui.min.js
             - bundles/sonataadmin/vendor/jqueryui/ui/minified/i18n/jquery-ui-i18n.min.js
             - bundles/sonataadmin/jquery/jquery.form.js
             - bundles/sonataadmin/jquery/jquery.confirmExit.js
             - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js
-            - bundles/sonataadmin/vendor/select2/select2.min.js
+            - bundles/sonatacore/select2/select2.min.js
             - bundles/sonataadmin/App.js
             - bundles/sonataadmin/Admin.js
 #            - bundles/sonataadmin/treeview.js
@@ -278,4 +278,4 @@ sonata_admin:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: Wdr\AdminBundle\Entity\User
+    user_class: Wdr\InowebBundle\Entity\User

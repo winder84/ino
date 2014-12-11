@@ -16,8 +16,8 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Wdr\InowebBundle\WdrInowebBundle(),
-			new Wdr\AdminBundle\WdrAdminBundle(),
+
+			new Wdr\InowebBundle\WdrInowebBundle(),
 			new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 			new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 			new Sonata\CacheBundle\SonataCacheBundle(),

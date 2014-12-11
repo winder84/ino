@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef513f3d34302814edecee2ba3a39578",
+    "hash": "2789b8b36e64297db0bcf54094e10ed9",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3594,8 +3594,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sonata-project/datagrid-bundle": 20,
-        "friendsofsymfony/user-bundle": 20
+        "friendsofsymfony/user-bundle": 20,
+        "sonata-project/datagrid-bundle": 20
     },
     "prefer-stable": false,
     "platform": {

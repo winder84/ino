@@ -1,4 +1,14 @@
 services:
-#    wdr_inoweb.example:
-#        class: Wdr\InowebBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.admin.service:
+        class: Wdr\InowebBundle\Admin\ServiceAdmin
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: "Контент"
+              label: "Сервис"
+        arguments:
+            - ~
+            - Wdr\InowebBundle\Entity\Service
+            - ~
+        roles:
+            - ROLE_ADMIN

@@ -16,9 +16,21 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-			new Vich\UploaderBundle\VichUploaderBundle(),
             new Wdr\InowebBundle\WdrInowebBundle(),
-            new Wdr\AdminBundle\WdrAdminBundle(),
+			new Wdr\AdminBundle\WdrAdminBundle(),
+			new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+			new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+			new Sonata\CacheBundle\SonataCacheBundle(),
+			new Sonata\CoreBundle\SonataCoreBundle(),
+			new Sonata\BlockBundle\SonataBlockBundle(),
+			new Sonata\SeoBundle\SonataSeoBundle(),
+			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+			new Sonata\NotificationBundle\SonataNotificationBundle(),
+			new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+			new Sonata\AdminBundle\SonataAdminBundle(),
+			new Sonata\PageBundle\SonataPageBundle(),
+			new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+			new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

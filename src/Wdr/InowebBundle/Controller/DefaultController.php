@@ -8,6 +8,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('WdrInowebBundle:Default:index.html.twig');
+		$em = $this->getDoctrine()->getManager();
+		$services = $em->getRepository('WdrInowebBundle:Service')->findAll();
+
+		return $this->render('WdrInowebBundle:Default:index.html.twig', array(
+			'services' => $services
+		));
     }
 }

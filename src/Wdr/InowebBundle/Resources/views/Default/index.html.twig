@@ -1,18 +1,20 @@
 {% block content %}
 	<ul class="servicesUl">
-		<li>
-			<img class="serviceImg" src="{{ asset('bundles/wdrinoweb/images/s1.png') }}" />
-			<div class="serviceBody">
-				<h3 class="serviceTitle">
-					РАЗРАБОТКА САЙТОВ
-				</h3>
-				<div class="serviceDelimer"></div>
-				<p class="serviceText">
-					Разрабатываем сайты любой сложности от сайтов-визиток и landing page, до сложных корпоративных сайтов, порталов и web-магазинов.
-				</p>
-			</div>
-		</li>
-		<li></li>
-		<li></li>
+		{% for key,service in services %}
+			{% if key < 3 %}
+				<li>
+					<img class="serviceImg" src="{{ asset('bundles/wdrinoweb/images/s1.png') }}" />
+					<div class="serviceBody">
+						<h3 class="serviceTitle">
+							{{ service.title }}
+						</h3>
+						<div class="serviceDelimer"></div>
+						<p class="serviceText">
+							{{ service.text }}
+						</p>
+					</div>
+				</li>
+			{% endif %}
+		{% endfor %}
 	</ul>
 {% endblock %}

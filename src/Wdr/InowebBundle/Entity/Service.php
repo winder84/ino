@@ -3,6 +3,7 @@
 namespace Wdr\InowebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Wdr\InowebBundle\Entity\Image;
 
 /**
  * Service
@@ -12,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Service
 {
+	/**
+	 * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+	 */
+	private $image;
+
     /**
      * @var integer
      *
@@ -90,5 +97,28 @@ class Service
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \Wdr\InowebBundle\Entity\Image $image
+     * @return Service
+     */
+    public function setImage(\Wdr\InowebBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Wdr\InowebBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

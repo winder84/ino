@@ -1,14 +1,18 @@
 services:
     sonata.admin.service:
         class: Wdr\InowebBundle\Admin\ServiceAdmin
+        arguments: [~, Wdr\InowebBundle\Entity\Service, ~]
         tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: "Контент"
-              label: "Сервис"
-        arguments:
-            - ~
-            - Wdr\InowebBundle\Entity\Service
-            - ~
-        roles:
-            - ROLE_ADMIN
+            - {name: sonata.admin, manager_type: orm, group: "Контент", label: "Сервисы"}
+
+    wdr_inoweb.admin.image:
+        class: Wdr\InowebBundle\Admin\ImageAdmin
+        arguments: [~, Wdr\InowebBundle\Entity\Image, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "Контент", label: "Изображения"}
+
+    wdr_inoweb.admin.user:
+        class: Wdr\InowebBundle\Admin\UserAdmin
+        arguments: [~, Wdr\InowebBundle\Entity\User, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "Контент", label: "Пользователи"}

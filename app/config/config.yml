@@ -212,6 +212,8 @@ sonata_page:
 
 
 sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.acl
     templates:
         user_block:           SonataAdminBundle:Core:user_block.html.twig
         add_block:            SonataAdminBundle:Core:add_block.html.twig

@@ -3,7 +3,7 @@
 namespace Wdr\InowebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Wdr\InowebBundle\Entity\Image;
+use Wdr\InowebBundle\Entity\File;
 
 /**
  * Service
@@ -14,10 +14,10 @@ use Wdr\InowebBundle\Entity\Image;
 class Service
 {
 	/**
-	 * @ORM\OneToOne(targetEntity="Image")
-     * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+	 * @ORM\OneToOne(targetEntity="File")
+     * @ORM\JoinColumn(name="file_id", referencedColumnName="id")
 	 */
-	private $image;
+	private $file;
 
     /**
      * @var integer
@@ -100,25 +100,25 @@ class Service
     }
 
     /**
-     * Set image
+     * Set file
      *
-     * @param \Wdr\InowebBundle\Entity\Image $image
+     * @param File $file
      * @return Service
      */
-    public function setImage(\Wdr\InowebBundle\Entity\Image $image = null)
+    public function setFile(File $file = null)
     {
-        $this->image = $image;
+        $this->file = $file;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get file
      *
-     * @return \Wdr\InowebBundle\Entity\Image 
+     * @return \Wdr\InowebBundle\Entity\File
      */
-    public function getImage()
+    public function getFile()
     {
-        return $this->image;
+        return $this->file;
     }
 }

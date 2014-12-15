@@ -7,7 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Wdr\InowebBundle\Entity\Image;
+use Wdr\InowebBundle\Entity\File;
 
 class ServiceAdmin extends Admin
 {
@@ -32,7 +32,7 @@ class ServiceAdmin extends Admin
             ->add('id')
             ->add('title')
             ->add('text')
-			->add('image', 'sonata_type_admin', array('delete' => false))
+			->add('file', 'sonata_type_admin', array('delete' => false))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -51,7 +51,7 @@ class ServiceAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('text')
-			->add('image', 'sonata_type_admin', array('delete' => false))
+			->add('file', 'sonata_type_admin', array('delete' => false))
         ;
     }
 
@@ -63,35 +63,35 @@ class ServiceAdmin extends Admin
         $showMapper
             ->add('title')
             ->add('text')
-			->add('image', 'sonata_type_admin', array('delete' => false))
+			->add('file', 'sonata_type_admin', array('delete' => false))
         ;
     }
 
 	public function prePersist($page) {
-		$this->manageEmbeddedImageAdmins($page);
+		$this->manageEmbeddedFileAdmins($page);
 	}
 	public function preUpdate($page) {
-		$this->manageEmbeddedImageAdmins($page);
+		$this->manageEmbeddedFileAdmins($page);
 	}
-	private function manageEmbeddedImageAdmins($page) {
+	private function manageEmbeddedFileAdmins($page) {
 		// Cycle through each field
 		foreach ($this->getFormFieldDescriptions() as $fieldName => $fieldDescription) {
-			// detect embedded Admins that manage Images
+			// detect embedded Admins that manage Files
 			if ($fieldDescription->getType() === 'sonata_type_admin' &&
 				($associationMapping = $fieldDescription->getAssociationMapping()) &&
-				$associationMapping['targetEntity'] === 'Wdr\Bundle\Entity\Image'
+				$associationMapping['targetEntity'] === 'Wdr\Bundle\Entity\File'
 			) {
 				$getter = 'get' . $fieldName;
 				$setter = 'set' . $fieldName;
 
-				/** @var Image $image */
-				$image = $page->$getter();
-				if ($image) {
-					if ($image->getFile()) {
-						// update the Image to trigger file management
-						$image->refreshUpdated();
-					} elseif (!$image->getFile() && !$image->getFilename()) {
-						// prevent Sf/Sonata trying to create and persist an empty Image
+				/** @var File $file */
+				$file = $page->$getter();
+				if ($file) {
+					if ($file->getFile()) {
+						// update the File to trigger file management
+						$file->refreshUpdated();
+					} elseif (!$file->getFile() && !$file->getFilename()) {
+						// prevent Sf/Sonata trying to create and persist an empty File
 						$page->$setter(null);
 					}
 				}

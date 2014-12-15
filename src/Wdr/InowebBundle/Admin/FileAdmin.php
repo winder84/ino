@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class ImageAdmin extends Admin
+class FileAdmin extends Admin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -45,7 +45,7 @@ class ImageAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('image', 'file', array('required' => false))
+			->add('file', 'file', array('required' => false))
         ;
     }
 
@@ -57,21 +57,21 @@ class ImageAdmin extends Admin
         $showMapper
             ->add('id')
             ->add('name')
-			->add('image', 'file', array('required' => false))
+			->add('file', 'file', array('required' => false))
         ;
     }
 
-	public function prePersist($image) {
-		$this->manageFileUpload($image);
+	public function prePersist($file) {
+		$this->manageFileUpload($file);
 	}
 
-	public function preUpdate($image) {
-		$this->manageFileUpload($image);
+	public function preUpdate($file) {
+		$this->manageFileUpload($file);
 	}
 
-	private function manageFileUpload($image) {
-		if ($image->getFile()) {
-			$image->refreshUpdated();
+	private function manageFileUpload($file) {
+		if ($file->getFile()) {
+			$file->refreshUpdated();
 		}
 	}
 }

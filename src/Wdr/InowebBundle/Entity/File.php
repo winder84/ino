@@ -3,16 +3,17 @@
 namespace Wdr\InowebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Image
+ * File
  *
  * @ORM\Table()
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Image
+class File
 {
 
 	/**
@@ -58,7 +59,7 @@ class Image
 	/**
 	 * Get file.
 	 *
-	 * @return UploadedFile
+	 * @return File
 	 */
 	public function getFile()
 	{
@@ -115,7 +116,7 @@ class Image
     private $id;
 
     /**
-	 * Image name
+	 * File name
 	 *
 	 * @var string
      *
@@ -137,7 +138,7 @@ class Image
      * Set name
      *
      * @param string $name
-     * @return Image
+     * @return File
      */
     public function setName($name)
     {
